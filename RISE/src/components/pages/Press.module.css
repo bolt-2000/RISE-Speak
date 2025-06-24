@@ -1,0 +1,333 @@
+.pressPage {
+  min-height: 100vh;
+  background: var(--gradient-dark);
+}
+
+.header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-3xl) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gray-400);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-lg);
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--primary-light);
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--light);
+  margin-bottom: var(--spacing-sm);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: var(--gray-300);
+  margin: 0;
+}
+
+.pressContact, .pressReleases, .mediaKit, .awards, .factSheet {
+  padding: var(--spacing-3xl) 0;
+}
+
+.contactCard {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-3xl);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactCard h2 {
+  color: var(--light);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+.contactCard p {
+  color: var(--gray-300);
+  margin-bottom: var(--spacing-xl);
+  line-height: 1.6;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contactItem {
+  color: var(--gray-300);
+  font-size: 1rem;
+}
+
+.contactItem strong {
+  color: var(--light);
+}
+
+.pressReleases h2, .mediaKit h2, .awards h2, .factSheet h2 {
+  color: var(--light);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.releasesList {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+.releaseCard {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.releaseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary);
+}
+
+.releaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.category {
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.date {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+}
+
+.releaseCard h3 {
+  color: var(--light);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.3;
+}
+
+.releaseCard p {
+  color: var(--gray-300);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.mediaKit p {
+  color: var(--gray-300);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mediaGrid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.mediaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  transition: all 0.2s ease;
+}
+
+.mediaItem:hover {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: var(--primary);
+}
+
+.mediaIcon {
+  font-size: 2rem;
+  background: var(--gradient-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 60px;
+}
+
+.mediaInfo {
+  flex: 1;
+}
+
+.mediaInfo h3 {
+  color: var(--light);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.mediaInfo p {
+  color: var(--gray-300);
+  margin-bottom: var(--spacing-sm);
+}
+
+.mediaDetails {
+  display: flex;
+  gap: var(--spacing-sm);
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.awardsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.awardCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.awardCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.awardIcon {
+  font-size: 3rem;
+  background: var(--gradient-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  height: 80px;
+}
+
+.awardInfo h3 {
+  color: var(--light);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.awardInfo p {
+  color: var(--gray-300);
+  margin-bottom: var(--spacing-sm);
+}
+
+.awardYear {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.factsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.factCard {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.factCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.factCard h3 {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.factCard p {
+  color: var(--light);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .releaseHeader {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-start;
+  }
+  
+  .mediaItem {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .awardCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}
