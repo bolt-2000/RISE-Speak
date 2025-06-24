@@ -1,0 +1,142 @@
+.cookiesPage {
+  min-height: 100vh;
+  background: var(--gradient-dark);
+}
+
+.header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-3xl) 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--gray-400);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-lg);
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--primary-light);
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--light);
+  margin-bottom: var(--spacing-sm);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-size: 1rem;
+  color: var(--gray-400);
+  margin: 0;
+}
+
+.content {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.section h2 {
+  color: var(--light);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+.section p {
+  color: var(--gray-300);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.section ul {
+  color: var(--gray-300);
+  line-height: 1.8;
+  margin-left: var(--spacing-lg);
+}
+
+.section li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.section a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}
+
+.cookieTypes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.cookieType {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  transition: all 0.3s ease;
+}
+
+.cookieType:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.cookieType h3 {
+  color: var(--light);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.cookieType p {
+  color: var(--gray-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cookieControls {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .cookieControls {
+    flex-direction: column;
+  }
+}
