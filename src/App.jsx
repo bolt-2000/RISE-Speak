@@ -23,6 +23,7 @@ import Cookies from "./components/pages/Cookies";
 import DMCA from "./components/pages/DMCA";
 import Categories from "./components/pages/Categories";
 import Creators from "./components/pages/Creators";
+import ChatBot from "./components/ChatBot";
 
 function App() {
   const [currentEpisode, setCurrentEpisode] = useState(null);
@@ -79,6 +80,9 @@ function App() {
           </>
         } />
       </Routes>
+      
+      {/* Chat Bot - Available on all pages */}
+      <ChatBot />
     </div>
   );
 }
