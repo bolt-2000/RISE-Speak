@@ -23,6 +23,7 @@ import Cookies from "./components/pages/Cookies";
 import DMCA from "./components/pages/DMCA";
 import Categories from "./components/pages/Categories";
 import Creators from "./components/pages/Creators";
+import PodcastApplication from "./components/PodcastApplication";
 import ChatBot from "./components/ChatBot";
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
         <Route path="/dmca" element={<DMCA />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/creators" element={<Creators />} />
+        <Route path="/apply" element={<PodcastApplication />} />
         <Route path="/feedback" element={<Contact />} />
         <Route path="/player" element={
           <>
