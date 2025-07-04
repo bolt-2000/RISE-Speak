@@ -1,0 +1,297 @@
+.playerContainer {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-3xl);
+  min-height: 100vh;
+}
+
+.noEpisode {
+  text-align: center;
+  color: var(--gray-400);
+}
+
+.noEpisodeIcon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.noEpisode h2 {
+  color: var(--light);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.noEpisode p {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.episodeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--spacing-3xl);
+  text-align: center;
+}
+
+.episodeArtwork {
+  width: 300px;
+  height: 300px;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.episodeArtwork::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+  z-index: 1;
+}
+
+.episodeArtwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.episodeDetails {
+  max-width: 600px;
+}
+
+.episodeTitle {
+  color: var(--light);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+.episodeHost {
+  color: var(--primary-light);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.episodeDuration {
+  color: var(--gray-400);
+  font-size: 1rem;
+}
+
+.playerControls {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-xl);
+  width: 100%;
+  max-width: 800px;
+  backdrop-filter: blur(20px);
+}
+
+.mainControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.controlButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: var(--light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controlButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.playButton {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.playButton:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.playButton.playing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+}
+
+.progressSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.timeDisplay {
+  color: var(--gray-300);
+  font-size: 0.875rem;
+  font-weight: 500;
+  min-width: 40px;
+}
+
+.progressBar {
+  flex: 1;
+  cursor: pointer;
+  padding: var(--spacing-sm) 0;
+}
+
+.progressTrack {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  transition: width 0.1s ease;
+  position: relative;
+}
+
+.progressFill::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.volumeControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.volumeButton {
+  background: none;
+  border: none;
+  color: var(--gray-300);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.volumeButton:hover {
+  color: var(--light);
+}
+
+.volumeSlider {
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .playerContainer {
+    padding: var(--spacing-xl);
+  }
+  
+  .episodeArtwork {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .episodeTitle {
+    font-size: 2rem;
+  }
+  
+  .mainControls {
+    gap: var(--spacing-lg);
+  }
+  
+  .controlButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .playButton {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .progressSection {
+    gap: var(--spacing-md);
+  }
+  
+  .volumeSlider {
+    width: 80px;
+  }
+}
