@@ -34,9 +34,26 @@ export default function PodcastApplication() {
   const [availableDate, setAvailableDate] = useState(null);
 
   const categories = [
-    'Technology', 'Business', 'Health & Fitness', 'Comedy', 'Education',
-    'News & Politics', 'True Crime', 'Sports', 'Arts & Culture', 'Science',
-    'History', 'Music', 'Self-Improvement', 'Entertainment', 'Other'
+    { value: 'technology', label: 'Technology', icon: '💻', description: 'Tech trends, gadgets, software, AI, programming' },
+    { value: 'medical', label: 'Medical & Health', icon: '🏥', description: 'Healthcare, medicine, wellness, mental health' },
+    { value: 'business', label: 'Business & Finance', icon: '💼', description: 'Entrepreneurship, investing, economics, startups' },
+    { value: 'education', label: 'Education & Learning', icon: '📚', description: 'Teaching, academic topics, skill development' },
+    { value: 'science', label: 'Science & Research', icon: '🔬', description: 'Scientific discoveries, research, experiments' },
+    { value: 'entertainment', label: 'Entertainment', icon: '🎭', description: 'Movies, TV shows, celebrity interviews, pop culture' },
+    { value: 'comedy', label: 'Comedy', icon: '😂', description: 'Stand-up, humor, funny stories, comedy sketches' },
+    { value: 'sports', label: 'Sports & Fitness', icon: '⚽', description: 'Sports analysis, fitness tips, athlete interviews' },
+    { value: 'music', label: 'Music & Arts', icon: '🎵', description: 'Music reviews, artist interviews, creative arts' },
+    { value: 'news', label: 'News & Politics', icon: '📰', description: 'Current events, political analysis, journalism' },
+    { value: 'history', label: 'History & Culture', icon: '📜', description: 'Historical events, cultural topics, heritage' },
+    { value: 'lifestyle', label: 'Lifestyle', icon: '🌟', description: 'Fashion, travel, food, personal development' },
+    { value: 'crime', label: 'True Crime', icon: '🔍', description: 'Criminal investigations, mystery, forensics' },
+    { value: 'religion', label: 'Religion & Spirituality', icon: '🙏', description: 'Faith, spirituality, religious discussions' },
+    { value: 'gaming', label: 'Gaming & Esports', icon: '🎮', description: 'Video games, esports, gaming culture' },
+    { value: 'parenting', label: 'Parenting & Family', icon: '👨‍👩‍👧‍👦', description: 'Parenting tips, family life, child development' },
+    { value: 'automotive', label: 'Automotive', icon: '🚗', description: 'Cars, motorcycles, automotive industry' },
+    { value: 'food', label: 'Food & Cooking', icon: '🍳', description: 'Recipes, cooking tips, food culture, restaurants' },
+    { value: 'travel', label: 'Travel & Adventure', icon: '✈️', description: 'Travel guides, adventure stories, destinations' },
+    { value: 'other', label: 'Other', icon: '📂', description: 'Topics not covered in other categories' }
   ];
 
   const experienceLevels = [
@@ -139,6 +156,19 @@ export default function PodcastApplication() {
 
     setIsSubmitting(true);
 
+    // Save to localStorage for admin panel
+    const applicationData = {
+      ...formData,
+      id: Date.now(),
+      submittedAt: new Date().toISOString(),
+      status: 'pending',
+      scheduledDate: null
+    };
+
+    const existingApplications = JSON.parse(localStorage.getItem('podcastApplications') || '[]');
+    existingApplications.push(applicationData);
+    localStorage.setItem('podcastApplications', JSON.stringify(existingApplications));
+
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
@@ -146,6 +176,8 @@ export default function PodcastApplication() {
       setAvailableDate(generateAvailableDate());
     }, 2000);
   };
+
+  const selectedCategory = categories.find(cat => cat.value === formData.category);
 
   if (isSubmitted) {
     return (
@@ -296,7 +328,7 @@ export default function PodcastApplication() {
 
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel}>
-                    Category *
+                    Category/Genre *
                     <select
                       name="category"
                       value={formData.category}
@@ -305,10 +337,17 @@ export default function PodcastApplication() {
                     >
                       <option value="">Select a category</option>
                       {categories.map(category => (
-                        <option key={category} value={category}>{category}</option>
+                        <option key={category.value} value={category.value}>
+                          {category.icon} {category.label}
+                        </option>
                       ))}
                     </select>
                     {errors.category && <span className={styles.errorText}>{errors.category}</span>}
+                    {selectedCategory && (
+                      <div className={styles.categoryDescription}>
+                        <small>{selectedCategory.description}</small>
+                      </div>
+                    )}
                   </label>
                 </div>
 

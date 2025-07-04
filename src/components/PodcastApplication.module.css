@@ -182,6 +182,20 @@
   font-size: 0.875rem;
 }
 
+.categoryDescription {
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--primary);
+}
+
+.categoryDescription small {
+  color: var(--gray-300);
+  font-style: italic;
+  line-height: 1.4;
+}
+
 .socialMediaSection {
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-xl);
